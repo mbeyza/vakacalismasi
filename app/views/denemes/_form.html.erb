@@ -1,0 +1,44 @@
+<%= form_with(model: deneme) do |form| %>
+  <% if deneme.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(deneme.errors.count, "error") %> prohibited this deneme from being saved:</h2>
+
+      <ul>
+        <% deneme.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field mb-3">
+    <% form.label :AD %>
+    <%= form.text_field :AD, class:"form-control", placeholder:"ad" %>
+  </div>
+
+  <div class="field mb-3">
+    <% form.label :SOYAD %>
+    <%= form.text_field :SOYAD, class:"form-control", placeholder:"soyad" %>
+  </div>
+
+  <div class="field mb-3">
+    <% form.label :YAS %>
+    <%= form.number_field :YAS, class:"form-control", placeholder:"yas" %>
+  </div>
+
+  <div class="field mb-3">
+    <% form.label :EMAİL %>
+    <%= form.text_field :EMAİL, class:"form-control",placeholder:"email" %>
+  </div>
+
+  <div class="field mb-3">
+    <% form.label :ADRES %>
+    <%= form.text_area :ADRES , class:"form-control", placeholder:"adres" %>
+
+  </div>
+  <br/>
+
+  <div class="actions">
+    <%= form.submit class:'btn btn secondary' %>
+  </div>
+<% end %> 

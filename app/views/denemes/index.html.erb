@@ -1,0 +1,38 @@
+
+
+<h1>Kayıt Tablosu</h1>
+<br/>
+
+<table class="table table-striped">
+   <thead class="table-dark">
+    <tr>
+      <th>Ad</th>
+      <th>Soyad</th>
+      <th>Yas</th>
+      <th>Email</th>
+      <th>Adres</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @denemes.each do |deneme| %>
+      <tr>
+        <td><%= deneme.AD %></td>
+        <td><%= deneme.SOYAD %></td>
+        <td><%= deneme.YAS %></td>
+        <td><%= deneme.EMAİL %></td>
+        <td><%= deneme.ADRES %></td>
+        <td><%= link_to 'Show', deneme %></td>
+        <td><%= link_to 'Edit', edit_deneme_path(deneme) %></td>
+        <td><%= link_to 'Destroy', deneme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Deneme', new_deneme_path, class:"btn btn-primary" %>
+
+
